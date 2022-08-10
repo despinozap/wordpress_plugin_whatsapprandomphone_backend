@@ -1,0 +1,13 @@
+version: '3.5'
+
+services:
+  app:
+    image: node:alpine
+    environment:
+      CHOKIDAR_USEPOLLING: "true" #for file changes update
+    volumes:
+      - ./nodejs_src:/app
+    working_dir: /app
+    ports:
+      - "3001:3001"
+    command: npm run dev
