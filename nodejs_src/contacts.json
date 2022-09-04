@@ -1,22 +1,19 @@
 {
-    "comments": [
-        "This file contains all contacts data. Fields: 'name', 'phone' and 'chance' are required.",
-        "Field chance must be represented by a number between 0 and 100 (percent)"
-    ],
-    "contacts": [{
-            "name": "First contact",
+    "contacts": [
+        {
+            "name": "Contact 1",
             "phone": "1 234 567 8901",
-            "chance": 33
+            "chance": 33.33
         },
         {
-            "name": "Second contact",
+            "name": "Contact 2",
             "phone": "2 345 678 9012",
-            "chance": 33
+            "chance": 33.33
         },
         {
-            "name": "Third contact",
+            "name": "Contact 3",
             "phone": "3 456 789 0123",
-            "chance": 33
+            "chance": 33.33
         }
     ]
 }
