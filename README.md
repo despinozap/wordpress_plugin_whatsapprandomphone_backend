@@ -1,5 +1,5 @@
 # Whatsapp random phone plugin for WordPress (backend)
-Backend project for a WordPress plugin which requests a random whatsapp phone number (contact)
+Backend project for a WordPress plugin which requests a random whatsapp phone number (contact).
 
 ## Setup
 01. Run: **docker-compose run --rm app npm install**
@@ -38,3 +38,22 @@ CIPHER_IV=[PREDEFINED_CIPHER_IV]
 ## Run
 01. Run: **docker-compose up -d**
 02. Run: **docker-compose exec app sh** (and keep executing commands in a new terminal)
+
+## Deploy
+Useful snippets for deployment.
+
+### cPanel
+01. Into the endpoint folder, add the following code to the **.htaccess** file:
+```
+<IfModule Litespeed>
+    DirectoryIndex disabled
+    RewriteEngine On
+    
+    # Send requests to local server through the app port
+    RewriteRule ^$ http://127.0.0.1:[SERVER_LISTENING_PORT]/ [P,L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ http://127.0.0.1:[SERVER_LISTENING_PORT]/$1 [P, L]
+</IfModule>
+```
+**Important**: **[SERVER_LISTENING_PORT]** must be the same as PORT environment value.
