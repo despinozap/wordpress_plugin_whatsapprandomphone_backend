@@ -2,9 +2,10 @@
 Backend project for a WordPress plugin which requests a random whatsapp phone number (contact)
 
 ## Setup
-01. Run: **docker-compose run app npm install**
-02. Create **.env** file:
+01. Run: **docker-compose run --rm app npm install**
+02. Create **.env** file (for development mode):
 ```
+PORT=[SERVER_LISTENING_PORT]
 MODE=[debug, production, test, etc.]
 CIPHER_KEY=[PREDEFINED_CIPHER_KEY]
 CIPHER_IV=[PREDEFINED_CIPHER_IV]
@@ -14,7 +15,8 @@ CIPHER_IV=[PREDEFINED_CIPHER_IV]
 03. Load contacts information into the **contacts.json** file:
 ```
 {
-    "contacts": [{
+    "contacts": [
+        {
             "name": "Contact 1",
             "phone": "1 234 567 8901",
             "chance": 33.33
