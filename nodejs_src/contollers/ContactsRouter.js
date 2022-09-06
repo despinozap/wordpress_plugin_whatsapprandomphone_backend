@@ -1,7 +1,7 @@
 const contactsRouter = require('express').Router();
 
 // Cipher
-const { encrypt } = require('../contollers/CipherRouter');
+const { encrypt } = require('./CipherRouter');
 
 // Contacts data
 const { contacts } = require('../contacts.json');
@@ -35,7 +35,7 @@ contactsRouter.get(
        * Generate WhatsApp URL using the contact's phone
        * number with "+" symbol and spaces cleaned.
        */
-      const url = `https://web.whatsapp.com/send?phone=${contacts[index].phone.replace('+', '').replaceAll(' ', '')}`
+      const url = `https://web.whatsapp.com/send?phone=${contacts[index].phone.replace(/\+\s/g, '')}`;
       
       /**
        * Build the response object containing 
