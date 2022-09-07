@@ -35,7 +35,7 @@ contactsRouter.get(
        * Generate WhatsApp URL using the contact's phone
        * number with "+" symbol and spaces cleaned.
        */
-      const url = `https://web.whatsapp.com/send?phone=${contacts[index].phone.replace(/\+\s/g, '')}`;
+      const url = `https://api.whatsapp.com/send?phone=${contacts[index].phone.replace(/\+\s/g, '')}`;
       
       /**
        * Build the response object containing 
