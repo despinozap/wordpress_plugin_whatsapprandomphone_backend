@@ -57,3 +57,5 @@ Useful snippets for deployment.
 </IfModule>
 ```
 **Important**: **[SERVER_LISTENING_PORT]** must be the same as PORT environment value.
+
+02. For killing previous processes, run in terminal: **pkill -u [HOSTING_SERVICE_USERNAME]**
