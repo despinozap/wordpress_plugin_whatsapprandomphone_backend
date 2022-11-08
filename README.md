@@ -56,6 +56,7 @@ Useful snippets for deployment.
     RewriteRule ^(.*)$ http://127.0.0.1:[SERVER_LISTENING_PORT]/$1 [P, L]
 </IfModule>
 ```
-**Important**: **[SERVER_LISTENING_PORT]** must be the same as PORT environment value.
 
 02. For killing previous processes, run into the Terminal screen: **pkill -u [HOSTING_SERVICE_USERNAME]**
+
+**Important**: **[SERVER_LISTENING_PORT]** must be the same as PORT environment value.
