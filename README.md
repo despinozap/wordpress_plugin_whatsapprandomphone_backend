@@ -58,4 +58,4 @@ Useful snippets for deployment.
 ```
 **Important**: **[SERVER_LISTENING_PORT]** must be the same as PORT environment value.
 
-02. For killing previous processes, run in terminal: **pkill -u [HOSTING_SERVICE_USERNAME]**
+02. For killing previous processes, run into the Terminal screen: **pkill -u [HOSTING_SERVICE_USERNAME]**
