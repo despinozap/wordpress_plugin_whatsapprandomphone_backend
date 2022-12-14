@@ -39,6 +39,8 @@ CIPHER_IV=[PREDEFINED_CIPHER_IV]
 01. Run: **docker-compose up -d**
 02. Run: **docker-compose exec app sh** (and keep executing commands in a new terminal)
 
+**Important**: **[SERVER_LISTENING_PORT]** must be the same as PORT environment value.
+
 ## Deploy
 Useful snippets for deployment.
 
@@ -57,6 +59,10 @@ Useful snippets for deployment.
 </IfModule>
 ```
 
-02. For killing previous processes, run into the Terminal screen: **pkill -u [HOSTING_SERVICE_USERNAME]**
+02. Create app
+03. Click on button **Run NPM Install**
+04. Click on button **Run JS Script** (**start** script)
 
-**Important**: **[SERVER_LISTENING_PORT]** must be the same as PORT environment value.
+**Important**: If a previous app is running, kill previous processes:
+- Go to Terminal
+- Run: **pkill -u [HOSTING_SERVICE_USERNAME]**
