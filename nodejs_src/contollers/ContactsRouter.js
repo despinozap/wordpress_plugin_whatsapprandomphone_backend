@@ -1,7 +1,10 @@
 const contactsRouter = require('express').Router();
 
 // Cipher
-const { encrypt } = require('./CipherRouter');
+const { encrypt } = require('./CipherController');
+
+// Log
+const { logRequest } = require('./LogsController');
 
 // Contacts data
 const { contacts } = require('../contacts.json');
@@ -50,6 +53,8 @@ contactsRouter.get(
         name: encrypt(contacts[index].name),
         url: encrypt(url)
       };
+
+      logRequest(`${new Date().toUTCString()} => ${contactData.name}`);
 
       res.status(200)
         .json(contactData);
